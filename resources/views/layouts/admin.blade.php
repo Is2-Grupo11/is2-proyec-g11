@@ -18,16 +18,19 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
             
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
+                <!-- Page Heading -->
+                <!--ROLES Y PERMISOS BOTONES-->
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                       
+                        <x-admin-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.index')" class="btn btn-outline-primary">Roles</x-admin-link>
+                        <x-admin-link href="{{ route('admin.permissions.index') }}" :active="request()->routeIs('admin.permissions.index')" class="btn btn-outline-secondary">Permisos</x-admin-link>
+                        <!-- AGREGAR BOTON DE OTRAS DIRECCIONES -->
+                       <!-- <a href="{{ url('/users') }}" class="btn btn-danger ml-3">agregar usuario</a> -->
+                        
+                    </div>
+                </header>
             <main>
-                
                 {{ $slot }}
             </main>
         </div>

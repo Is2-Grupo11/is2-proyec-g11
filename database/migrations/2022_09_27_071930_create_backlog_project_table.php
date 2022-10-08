@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('backlog_project', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+
+            $table->integer('backlog_id')->unsigned();
+            $table->foreign('backlog_id')->references('id')->on('backlogs');
+
+            $table->integer('projectb_id')->unsigned();
+            $table->foreign('projectb_id')->references('id')->on('projects');       
+
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('backlog_project');
     }
 };
