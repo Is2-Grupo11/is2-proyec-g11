@@ -12,6 +12,26 @@
                         {{ __('Bienvenido! ') }}
                         {{ Auth::user()->name }}
                     </x-nav-link>
+                    
+                    @role('admin')
+                    <x-nav-link :href="url('users')" :active="request()->routeIs('edit-user')">
+                        {{ __('Usuarios  ') }}
+                    </x-nav-link>
+                    @endrole
+                    <!--Admin -->
+                  
+                    @role('admin')
+                    <x-nav-link :href="url('projects')" :active="request()->routeIs('projects')">
+                        {{ __('Proyectos  ') }}
+                    </x-nav-link>
+                    @endrole
+
+                    @role('admin')
+                    <x-nav-link :href="url('backlogs')" :active="request()->routeIs('backlogs')">
+                        {{ __('Backlogs  ') }}
+                    </x-nav-link>
+                    @endrole
+
                 </div>
             </div>
 
