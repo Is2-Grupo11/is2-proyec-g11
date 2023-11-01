@@ -1,64 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Laravel - Sistema de Gestión de Proyectos
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este sistema proporciona funcionalidades clave para una administración efectiva de proyectos, brindando a los usuarios la capacidad de optimizar su flujo de trabajo y alcanzar objetivos con éxito.
+Este Proyecto fue creado en la asignatura "Ingeniería de Software 2"
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Características
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Gestión de usuarios:** permite la creación y administración de usuarios con asignación de roles.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Creación de proyectos:** posibilita la creación y organización de proyectos.
 
-## Learning Laravel
+- **Backlogs:** ofrece la funcionalidad de gestionar y organizar los elementos del backlog del proyecto.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Sprint y User Stories:** facilita la planificación de sprints y la creación de user stories asociadas a las tareas.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Tablero Kanban:** proporciona un tablero Kanban para visualizar y gestionar las user stories de manera ágil.
 
-## Laravel Sponsors
+- **Gráficos:** incluye la funcionalidad de generar gráficos visuales por proyecto que muestran el estado de las tareas, diferenciando entre las pendientes, las que se encuentran en proceso y las finalizadas.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+##  Tecnologías y Librerías  Utilizadas 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- **Laravel:** Framework de desarrollo web en PHP.
+- **MySQL:** Sistema de gestión de base de datos relacional.
+- **Vue:** Framework progresivo de JavaScript para la construcción de interfaces de usuario en el lado del cliente.
+- **InertiaJS:** Biblioteca que permite a Vue.js trabajar sin problemas con aplicaciones de servidor renderizadas. Facilita la comunicación entre el frontend Vue.js y el backend Laravel.
+- **Laravel Spatie:** Empleado para el control de roles de usuarios dentro del sistema.
 
-## Contributing
+## Instalación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para ejecutar este proyecto localmente, sigue estos pasos:
 
-## Code of Conduct
+1. **Clona este repositorio:**
+    ```bash
+    git clone https://github.com/Is2-Grupo11/is2-proyec-g11.git
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Instala las dependencias del proyecto:**
+    ```bash
+    composer install
+    ```
 
-## Security Vulnerabilities
+3. **Instala las dependencias del lado del cliente:**
+    ```bash
+    npm install
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Genera la clave de la aplicación:**
+    ```bash
+    php artisan key:generate
+    ```
 
-## License
+5. **Configura el archivo `.env`:**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   Configura los datos de tu base de datos **MySQL** en el archivo `.env`.
+
+6. **Ejecuta las migraciones para crear la estructura de la base de datos:**
+    ```bash
+    php artisan migrate
+    ```
+
+7. **Inicia el servidor local:**
+    ```bash
+    php artisan serve
+    ```
+
+## Información del Proyecto
+
+Este proyecto fue desarrollado como parte de la materia "Ingeniería de Software 2" en la Facultad Politécnica de la Universidad Nacional de Asunción.
+
+### Detalles del Equipo de Desarrollo
+
+- Aarón Ocampo
+- Andrés Testa
+- Alexis Martinez
+- Gerardo Ortiz
+
+## Capturas de Pantalla
+
+![1](https://github.com/Is2-Grupo11/is2-proyec-g11/assets/111013326/b9fcf672-3024-4c0f-b6c4-ae946ef90fed)
+
+![2](https://github.com/Is2-Grupo11/is2-proyec-g11/assets/111013326/453c5778-9ad3-4399-8887-4289ffffa92d)
+
+![6](https://github.com/Is2-Grupo11/is2-proyec-g11/assets/111013326/2f787cba-701b-4389-aed6-75396e68fc17)
+
+![graficco](https://github.com/Is2-Grupo11/is2-proyec-g11/assets/111013326/208a3b27-c8c7-4db0-b881-8fadfa0b6586)
