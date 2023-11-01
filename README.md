@@ -67,7 +67,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
 
 ## Información del Proyecto
 
-Este proyecto fue desarrollado como parte de la materia "Ingeniería de Software 2" en la Facultad Politécnica de la Universidad Nacional de Asunción.
+Este proyecto fue desarrollado como parte de la materia "Ingeniería de Software 2" en la Facultad Politécnica de la Universidad Nacional de Asunción en el año 2021.
 
 ### Detalles del Equipo de Desarrollo
 
