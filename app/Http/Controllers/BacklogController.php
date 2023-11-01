@@ -12,14 +12,14 @@ use App\Http\Controllers\Controller;
 
 class BacklogController extends Controller
 {
-        public function index (Project $projects)
+    public function index(Project $projects)
     {
         //$backlogs = Backlog::all();
         //$backlogs_project = BacklogProject::all();
         //$project_user = ProjectUser::where('project_id', $projects->id)->get();
-       //$projectu = Project::where('id', $projects_user->project_id)->get();
+        //$projectu = Project::where('id', $projects_user->project_id)->get();
         $backlogs = Backlog::where('project_id', $projects->id)->get();
-        return view('backlogs.index', compact('projects','backlogs'));
+        return view('backlogs.index', compact('projects', 'backlogs'));
 
         //return view('backlogs.index')->with(compact('backlogs','backlogs_project'));
     }
@@ -64,19 +64,18 @@ class BacklogController extends Controller
         //condición para que solo guarde 1 backlog por proyecto
 
         if ($backlogs)
-        return back()->with('error','Ya existe backlog para este proyecto.');
+            return back()->with('error', 'Ya existe backlog para este proyecto.');
 
         //guarda backlog
 
         $backlogs = new Backlog();
         $backlogs->project_id = $project_id;
-        $backlogs->name=$request->input('name');
-        $backlogs->description=$request->input('description');
-        $backlogs->start=$request->input('start');
+        $backlogs->name = $request->input('name');
+        $backlogs->description = $request->input('description');
+        $backlogs->start = $request->input('start');
         $backlogs->save();
 
         return back()->with('message', 'Backlog creado correctamente');
-        
     }
 
 
@@ -84,18 +83,18 @@ class BacklogController extends Controller
     {
         //$this->validate($request, Project::$rules, Project::$messages);
         Backlog::find($id)->update($request->all());
-        
+
 
         return back()->with('message', 'Backlog Editado correctamente');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
 
-        
-       // $user = user::find($user_id)->delete(); //prueba
+
+        // $user = user::find($user_id)->delete(); //prueba
         //Backlog::find($id)->delete();
         Backlog::destroy($id);
         return back()->with('message', 'Backlog Eliminado correctamente');
     }
-
 }

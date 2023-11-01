@@ -45,10 +45,14 @@
                                         
                             </div>
                                 <div class="sm:col-span-6 pt-5">
+<<<<<<< HEAD
                                 
                         <a href="{{ url('/projects') }}" class="px-4 py-2 bg-blue-700 hover:bg-blue-500 text-white rounded-md">Volver</a>
                     
                                     <button type="submit" class="px-4 py-2 bg-green-700 hover:bg-green-500 text-white rounded-md">Asignar</button>
+=======
+                                    <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-md">Asignar</button>
+>>>>>>> 46b7f38d8b61cda5e4a0dc2589e13a8ac939fbb7
                                 </div>
                     </form>
                 </div>

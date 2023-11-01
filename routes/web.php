@@ -77,6 +77,23 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
    
 });
 
+Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group(function(){
+
+    Route::get('/',[IndexController::class, 'index'])->name('index');
+    Route::resource('/roles', RoleController::class);
+    Route::post('/roles/{role}/permissions', [RoleController::class, 'givePermission'])->name('roles.permissions');
+    Route::delete('/roles/{role}/permissions/{permission}', [RoleController::class, 'revokePermission'])->name('roles.permissions.revoke');
+    Route::resource('/permissions', PermissionController::class);
+    Route::post('/permissions/{permission}/roles', [PermissionController::class,'assignRole'])->name('permissions.roles');
+    Route::delete('/permissions/{permission}/roles/{role}', [PermissionController::class,'removeRole'])->name('permissions.roles.remove');
+    Route::get('/user/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::post('/users/{user}/roles',[UserController::class, 'assignRole'])->name('users.roles');
+    Route::delete('/users/{user}/roles/{role}',[UserController::class, 'removeRole'])->name('users.roles.remove');
+    
+
+   
+});
+
 require __DIR__.'/auth.php';
 
 Route::controller(App\Http\Controllers\UserController::class)->group(function () {
