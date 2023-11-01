@@ -12,7 +12,23 @@
                         {{ __('Bienvenido! ') }}
                         {{ Auth::user()->name }}
                     </x-nav-link>
-                </div>
+                    
+                    
+                    <x-nav-link :href="url('users')" :active="request()->routeIs('edit-user')">
+                        {{ __('Usuarios  ') }}
+                    </x-nav-link>
+                    
+                    <!--Admin -->
+                  
+                    
+                    <x-nav-link :href="url('projects')" :active="request()->routeIs('projects')">
+                        {{ __('Proyectos  ') }}
+                    </x-nav-link>
+                    
+
+                    
+                    
+                    </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -38,7 +54,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar Sesión') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
