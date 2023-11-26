@@ -11,6 +11,7 @@
       <div class="py-4 px-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <table class="table table-bordered">
           @can('create')
+          <!-- fix -->
             <div class="flex justify-end space-x-3 mb-2">
               <div>
                 <button class="btn btn-success ">
